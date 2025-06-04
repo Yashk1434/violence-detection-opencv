@@ -36,7 +36,7 @@ All app settings can be found in the `settings.yaml` file.
 
 To adjust the sensitivity of the violence detection system, modify the `prediction-threshold` value:
 
-```yaml
+``yaml
 📌 Lower values make the model more sensitive (may increase false positives)  
 📌 Higher values reduce sensitivity (may miss subtle incidents)
 
@@ -54,3 +54,12 @@ Install all dependencies using:
 
 ```bash
 pip install -r requirements.txt
+
+---
+
+## ▶️ Running the App
+
+To run the application:
+
+```bash
+python app.py

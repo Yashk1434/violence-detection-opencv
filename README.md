@@ -55,10 +55,9 @@ model-settings:
 label-settings:
   labels:
     - violence
-    - normal activity
-  default-label: normal activity
+    - no violence detected
+  default-label: no violence detected
 ``yaml
----
 ```
 ---
 ## 🛠️ Requirements

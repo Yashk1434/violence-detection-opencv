@@ -1,22 +1,30 @@
-# 🛡️ Violence Detection App using OpenCV
+# 🛡️ Violence Detection App using OpenCV + CLIP
 
-Welcome to the **Violence Detection App** — an AI-powered system designed to monitor video streams and detect violent or harmful activities in real-time using computer vision and deep learning. Built with **OpenCV**, this tool is ideal for surveillance, safety enforcement, and smart monitoring applications.
+Welcome to the **Violence Detection App** — a lightweight, AI-powered system that monitors video streams and detects violent or harmful activities in real-time using **OpenAI's CLIP**, **OpenCV**, and **PyTorch**.
+
+Ideal for surveillance, content moderation, and safety automation.
 
 ---
 
 ## 🚀 Features
 
-- 🎥 Real-time video feed analysis
-- 🔍 Detection of violent/harmful activities
-- 📸 Screenshots captured upon detection
-- ⚙️ Configurable detection sensitivity
-- 🧩 Easy to set up and integrate
+- 🎥 Real-time video stream analysis using webcam or video file
+- 🔍 Violence/harm detection using **zero-shot CLIP model**
+- 📸 Automatic frame capture upon detection
+- 📂 Easily configurable detection sensitivity via `settings.yaml`
+- ⚙️ Modular and extensible architecture
 
 ---
 
 ## 🧠 How It Works
 
-Each frame from a video stream is analyzed using a trained deep learning model. Based on the prediction confidence, the app determines whether violence is occurring. When violence is detected, it can trigger alerts, logging, or automated actions.
+The app uses OpenAI’s CLIP model to match visual frames against text descriptions like `"a photo of violence"` or `"a photo of normal activity"`.  
+It calculates the similarity between the image and text features and selects the most likely label.
+
+A confidence threshold is used to determine whether a frame should be flagged.
+
+✅ If the confidence is below the threshold → considered normal  
+⚠️ If the confidence is **greater than or equal to the threshold** → considered **violent**
 
 ---
 
@@ -28,21 +36,31 @@ Each frame from a video stream is analyzed using a trained deep learning model. 
 ⚠️ Violence detected — immediate action recommended:  
 <img src="https://github.com/user-attachments/assets/f86f2108-52a9-43fd-af2f-69fccd2385c8" alt="Violence Detected" width="500"/>
 
-
 ---
 
 ## ⚙️ Configuration
 
-All app settings can be found in the `settings.yaml` file.
+The app behavior is fully controlled through `settings.yaml`.
 
-To adjust the sensitivity of the violence detection system, modify the `prediction-threshold` value:
+Example configuration:
 
-``yaml
+```yaml
+model-settings:
+  model-name: ViT-B/32
+  prediction-threshold: 0.24  # 📌 Adjust sensitivity here
+
 📌 Lower values make the model more sensitive (may increase false positives)  
 📌 Higher values reduce sensitivity (may miss subtle incidents)
 
+label-settings:
+  labels:
+    - violence
+    - normal activity
+  default-label: normal activity
+``yaml
 ---
-
+```
+---
 ## 🛠️ Requirements
 
 - Python 3.7 or higher  

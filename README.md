@@ -1,42 +1,56 @@
-# 🔥 Violence Detection App Using OpenCV & CLIP Model
+# 🛡️ Violence Detection App using OpenCV
 
-Detect violence in real-time video streams with this smart surveillance system! 🚨👁️‍🗨️
+Welcome to the **Violence Detection App** — an AI-powered system designed to monitor video streams and detect violent or harmful activities in real-time using computer vision and deep learning. Built with **OpenCV**, this tool is ideal for surveillance, safety enforcement, and smart monitoring applications.
 
 ---
 
 ## 🚀 Features
 
-- **Real-time multi-video streaming** with live violence detection  
-- Powered by **CLIP (Contrastive Language–Image Pretraining) model** for zero-shot image classification 🎯  
-- Customizable violence labels (e.g., fights, street violence, fires)  
-- Visual alerts on video frames — green text for violence, blue for safe  
-- **Adjustable sensitivity** via `prediction-threshold` in `settings.yaml` ⚙️  
-- Responsive, scroll-free CCTV-style dashboard with elastic 16:9 video grids 📺  
+- 🎥 Real-time video feed analysis
+- 🔍 Detection of violent/harmful activities
+- 📸 Screenshots captured upon detection
+- ⚙️ Configurable detection sensitivity
+- 🧩 Easy to set up and integrate
 
 ---
 
-## ⚙️ How It Works
+## 🧠 How It Works
 
-1. Grabs video frames and preprocesses them for the CLIP model.  
-2. Converts violence-related labels into text feature embeddings using CLIP.  
-3. Compares each frame’s image features with label features to predict violence.  
-4. Shows alerts on the video stream based on confidence and threshold.  
+Each frame from a video stream is analyzed using a trained deep learning model. Based on the prediction confidence, the app determines whether violence is occurring. When violence is detected, it can trigger alerts, logging, or automated actions.
 
 ---
 
-## 🔧 Configuration
+## 🖼️ Examples
 
-Modify `settings.yaml` to fine-tune your app:
+✅ No violence detected — everything is running smoothly:  
+![No Violence](https://github.com/user-attachments/assets/ef2e8f67-29ac-416f-99c6-7a9d3391deb0)
+
+⚠️ Violence detected — immediate action recommended:  
+![Violence Detected](https://github.com/user-attachments/assets/f86f2108-52a9-43fd-af2f-69fccd2385c8)
+
+---
+
+## ⚙️ Configuration
+
+All app settings can be found in the `settings.yaml` file.
+
+To adjust the sensitivity of the violence detection system, modify the `prediction-threshold` value:
 
 ```yaml
-model-settings:
-  model-name: "ViT-B/32"  # CLIP model variant
-  prediction-threshold: 0.24  # Lower = more sensitive, Higher = fewer false alarms
+📌 Lower values make the model more sensitive (may increase false positives)  
+📌 Higher values reduce sensitivity (may miss subtle incidents)
 
-label-settings:
-  labels:
-    - fight on a street
-    - street violence
-    - violence in office
-    - fire in office
-  default-label: "No Violence Detected"
+---
+
+## 🛠️ Requirements
+
+- Python 3.7 or higher  
+- OpenCV (`cv2`)  
+- PyYAML  
+- NumPy  
+- TensorFlow or PyTorch (based on the model used)
+
+Install all dependencies using:
+
+```bash
+pip install -r requirements.txt

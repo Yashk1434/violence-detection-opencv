@@ -1,13 +1,13 @@
-# 🔥 Violence Detection App Using OpenCV & CLIP
+# 🔥 Violence Detection App Using OpenCV & CLIP Model
 
-Detect violence in real-time video streams effortlessly with this smart surveillance system! 🚨👁️‍🗨️
+Detect violence in real-time video streams with this smart surveillance system! 🚨👁️‍🗨️
 
 ---
 
 ## 🚀 Features
 
 - **Real-time multi-video streaming** with live violence detection  
-- Uses **OpenAI’s CLIP model** for zero-shot image classification 🎯  
+- Powered by **CLIP (Contrastive Language–Image Pretraining) model** for zero-shot image classification 🎯  
 - Customizable violence labels (e.g., fights, street violence, fires)  
 - Visual alerts on video frames — green text for violence, blue for safe  
 - **Adjustable sensitivity** via `prediction-threshold` in `settings.yaml` ⚙️  
@@ -17,10 +17,10 @@ Detect violence in real-time video streams effortlessly with this smart surveill
 
 ## ⚙️ How It Works
 
-1. Grab video frames and preprocess them for the model.  
-2. Convert violence-related labels to CLIP text features.  
-3. Compare each frame’s image features with label features to predict violence.  
-4. Show alerts on the video stream based on confidence and threshold.  
+1. Grabs video frames and preprocesses them for the CLIP model.  
+2. Converts violence-related labels into text feature embeddings using CLIP.  
+3. Compares each frame’s image features with label features to predict violence.  
+4. Shows alerts on the video stream based on confidence and threshold.  
 
 ---
 

@@ -23,10 +23,11 @@ Each frame from a video stream is analyzed using a trained deep learning model. 
 ## 🖼️ Examples
 
 ✅ No violence detected — everything is running smoothly:  
-![No Violence](https://github.com/user-attachments/assets/ef2e8f67-29ac-416f-99c6-7a9d3391deb0)
+<img src="https://github.com/user-attachments/assets/ef2e8f67-29ac-416f-99c6-7a9d3391deb0" alt="No Violence" width="500"/>
 
 ⚠️ Violence detected — immediate action recommended:  
-![Violence Detected](https://github.com/user-attachments/assets/f86f2108-52a9-43fd-af2f-69fccd2385c8)
+<img src="https://github.com/user-attachments/assets/f86f2108-52a9-43fd-af2f-69fccd2385c8" alt="Violence Detected" width="500"/>
+
 
 ---
 

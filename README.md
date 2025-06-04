@@ -54,7 +54,7 @@ Install all dependencies using:
 
 ```bash
 pip install -r requirements.txt
-
+```
 ---
 
 ## ▶️ Running the App
@@ -63,3 +63,4 @@ To run the application:
 
 ```bash
 python app.py
+```
